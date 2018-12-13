@@ -16,6 +16,9 @@ function handleFile(e) {
 	let use_worker = typeof Worker !== 'undefined';
 	const reader = new FileReader();
 	reader.onload = g => {
+		if(typeof console !== 'undefined') {
+			console.log("onload", new Date(), rABS, use_worker);
+		}
 		const worker = new Worker(XW.worker);
 		worker.onmessage = h => {
 			console.log(h);
