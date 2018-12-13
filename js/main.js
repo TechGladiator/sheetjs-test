@@ -1,4 +1,5 @@
 const worksheet = document.getElementById('worksheet');
-worksheet.addEventListener('change', () => {
+function handleFile(e) {
     console.log(worksheet.files[0].name);
-});
+}
+worksheet.addEventListener('change', handleFile);
