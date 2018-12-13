@@ -10,9 +10,14 @@
 <body>
     
     <input type="file" name="worksheet" id="worksheet" accept=".csv, .xls, .xlsx">
-    <button type="button" id="submit">Submit</button>
+    <!-- <button type="button" id="submit">Submit</button> -->
 
-    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <pre id="out"></pre>
+    <div id="htmlout"></div>
+    <br />
+
+    <script src="js/shim.js"></script>
+    <script src="js/xlsx.full.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
