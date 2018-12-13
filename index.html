@@ -16,8 +16,16 @@
     </select>
     
     <br />
+
+    <div id="drop">Drop a spreadsheet file here to see sheet data</div>
     
-    <input type="file" name="worksheet" id="worksheet" accept=".csv, .xls, .xlsx">
+    <input type="file" name="worksheet" id="worksheet" accept=".csv, .xls, .xlsx"> or click here to select a file
+
+    <br />
+
+    <b>Advanced Demo Options:</b>
+    Use Web Workers: (when available) <input type="checkbox" name="useworker" checked>
+    Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked>
 
     <pre id="out"></pre>
     <div id="htmlout"></div>
