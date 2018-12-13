@@ -10,7 +10,8 @@ const XW = {
 
 const worksheet = document.getElementById('worksheet');
 function handleFile(e) {
-	console.log(e.target.files[0].name);
+	const f = e.target.files[0];
+	console.log(f.name);
 	const reader = new FileReader();
 }
 worksheet.addEventListener('change', handleFile);
