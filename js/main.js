@@ -13,5 +13,11 @@ function handleFile(e) {
 	const f = e.target.files[0];
 	console.log(f.name);
 	const reader = new FileReader();
+	reader.onload = g => {
+		const worker = new Worker(XW.worker);
+		worker.onmessage = h => {
+			console.log(h);
+		}
+	}
 }
 worksheet.addEventListener('change', handleFile);
