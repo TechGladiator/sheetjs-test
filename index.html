@@ -8,24 +8,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-    Output Format: <select name="format" onchange="setfmt()">
+    Output Format: <select name="format">
         <option value="csv" selected> CSV</option>
         <option value="json"> JSON</option>
         <option value="form"> FORMULAE</option>
         <option value="html"> HTML</option>
     </select>
     
-    <br />
+    <br>
+    <br>
 
     <div id="drop">Drop a spreadsheet file here to see sheet data</div>
+
+    <br>
     
-    <input type="file" name="worksheet" id="worksheet" accept=".csv, .xls, .xlsx"> or click here to select a file
+    <input type="file" name="worksheet" id="worksheet" accept=".csv, .xls, .xlsx"> or select a file
 
-    <br />
-
-    <b>Advanced Demo Options:</b>
-    Use Web Workers: (when available) <input type="checkbox" name="useworker" checked>
-    Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked>
+    <br>
 
     <pre id="out"></pre>
     <div id="htmlout"></div>
