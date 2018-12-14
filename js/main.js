@@ -63,7 +63,6 @@ function processWB(wb) {
 	}
 
 	function to_html(workbook) {
-		HTMLOUT.innerHTML = "";
 		workbook.SheetNames.forEach(sheetName => {
 			const htmlstr = X.write(workbook, {sheet:sheetName, type:'string', bookType:'html'});
 			HTMLOUT.innerHTML += htmlstr;
@@ -71,6 +70,7 @@ function processWB(wb) {
 		return "";
 	}
 
+	HTMLOUT.innerHTML = "";
 	global_wb = wb;
 	let output = "";
 	switch(getFormat()) {
