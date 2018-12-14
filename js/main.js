@@ -18,7 +18,7 @@ function processFile(files) {
 	const reader = new FileReader();
 	reader.onload = e => {
 		const data = e.target.result;
-		OUT.innerText = data;
+		OUT.innerText = JSON.stringify(X.read(data, {type: 'binary'}));
 	};
 	reader.readAsBinaryString(file);
 }
