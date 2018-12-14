@@ -14,6 +14,18 @@ const fileInput = document.getElementById('file-input');
 function processWB(wb) {
 	const OUT = document.getElementById('out');
 	const HTMLOUT = document.getElementById('htmlout');
+
+	function getFormat() {
+		const formats = document.getElementsByName('format');
+		return () => {
+			for (let i = 0; i < formats.length; i++) {
+				if (formats[i].checked || formats.length === 1) {
+					return formats[i].nodeValue;
+				}
+			}
+		}
+	}
+
 	OUT.innerText = JSON.stringify(wb);
 }
 
