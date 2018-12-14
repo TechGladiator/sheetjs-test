@@ -13,12 +13,16 @@ const fileInput = document.getElementById('file-input');
 const OUT = document.getElementById('out');
 const HTMLOUT = document.getElementById('htmlout');
 
+function processWB(wb) {
+	OUT.innerText = JSON.stringify(wb);
+}
+
 function processFile(files) {
 	const file = files[0];
 	const reader = new FileReader();
 	reader.onload = e => {
 		const data = e.target.result;
-		OUT.innerText = JSON.stringify(X.read(data, {type: 'binary'}));
+		processWB(X.read(data, {type: 'binary'}));
 	};
 	reader.readAsBinaryString(file);
 }
