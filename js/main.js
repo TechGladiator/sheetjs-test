@@ -8,3 +8,11 @@ const XW = {
 	worker: './js/xlsxworker.js'
 };
 
+const fileDrop = document.getElementById('file-drop');
+
+// drop handler - not working
+fileDrop.addEventListener('drop', e => {
+	e.stopPropagation();
+	e.preventDefault();
+	e.dataTransfer.files;
+});
