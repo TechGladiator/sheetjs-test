@@ -10,10 +10,10 @@ const XW = {
 
 const fileDrop = document.getElementById('file-drop');
 const fileInput = document.getElementById('file-input');
-const OUT = document.getElementById('out');
-const HTMLOUT = document.getElementById('htmlout');
 
 function processWB(wb) {
+	const OUT = document.getElementById('out');
+	const HTMLOUT = document.getElementById('htmlout');
 	OUT.innerText = JSON.stringify(wb);
 }
 
