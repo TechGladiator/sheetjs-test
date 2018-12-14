@@ -10,6 +10,7 @@ const XW = {
 
 const fileDrop = document.getElementById('file-drop');
 const fileInput = document.getElementById('file-input');
+let global_wb;
 
 function processWB(wb) {
 	const OUT = document.getElementById('out');
@@ -70,6 +71,7 @@ function processWB(wb) {
 		return "";
 	}
 
+	global_wb = wb;
 	let output = "";
 	switch(getFormat()) {
 		case "form": output = to_fmla(wb); break;
@@ -83,6 +85,12 @@ function processWB(wb) {
 		OUT.innerText = output;
 	}
 }
+
+const setfmt = window.setfmt = function setfmt() {
+	if (global_wb) {
+		processWB(global_wb);
+	}
+};
 
 function processFile(files) {
 	const file = files[0];
