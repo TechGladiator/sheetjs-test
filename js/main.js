@@ -21,5 +21,6 @@ fileDrop.addEventListener('drop', e => {
 });
 
 fileInput.addEventListener('change', e => {
-	console.log(e.target.files[0].name);
+	const file = e.target.files[0];
+	console.log(file.name);
 });
