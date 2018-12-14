@@ -27,6 +27,7 @@ fileInput.addEventListener('change', e => {
 	reader.onload = g => {
 		const data = g.target.result;
 		console.log(data);
+		OUT.innerText = data;
 	}
 	reader.readAsBinaryString(file);
 });
