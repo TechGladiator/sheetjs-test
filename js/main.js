@@ -13,6 +13,20 @@ const fileInput = document.getElementById('file-input');
 const OUT = document.getElementById('out');
 const HTMLOUT = document.getElementById('htmlout');
 
+function processFile(files) {
+	const file = files[0];
+	const reader = new FileReader();
+	reader.onload = e => {
+		const data = e.target.result;
+		OUT.innerText = data;
+	};
+	reader.readAsBinaryString(file);
+}
+
+function handleFile(e) {
+	processFile(e.target.files);
+}
+
 // drop handler - not working
 fileDrop.addEventListener('drop', e => {
 	e.stopPropagation();
@@ -20,12 +34,4 @@ fileDrop.addEventListener('drop', e => {
 	e.dataTransfer.files;
 });
 
-fileInput.addEventListener('change', e => {
-	const file = e.target.files[0];
-	const reader = new FileReader();
-	reader.onload = g => {
-		const data = g.target.result;
-		OUT.innerText = data;
-	}
-	reader.readAsBinaryString(file);
-});
+fileInput.addEventListener('change', handleFile);
