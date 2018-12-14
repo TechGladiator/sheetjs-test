@@ -10,6 +10,8 @@ const XW = {
 
 const fileDrop = document.getElementById('file-drop');
 const fileInput = document.getElementById('file-input');
+const OUT = document.getElementById('out');
+const HTMLOUT = document.getElementById('htmlout');
 
 // drop handler - not working
 fileDrop.addEventListener('drop', e => {
