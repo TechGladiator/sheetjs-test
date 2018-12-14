@@ -25,7 +25,8 @@ fileInput.addEventListener('change', e => {
 	console.log(file.name);
 	const reader = new FileReader();
 	reader.onload = g => {
-		console.log(g);
+		const data = g.target.result;
+		console.log(data);
 	}
 	reader.readAsBinaryString(file);
 });
