@@ -27,11 +27,21 @@ function handleFile(e) {
 	processFile(e.target.files);
 }
 
-// drop handler - not working
-fileDrop.addEventListener('drop', e => {
+function handleDrop(e) {
 	e.stopPropagation();
 	e.preventDefault();
-	e.dataTransfer.files;
-});
+	processFile(e.dataTransfer.files);
+}
+
+function handleDragover(e) {
+	e.stopPropagation();
+	e.preventDefault();
+	e.dataTransfer.dropEffect = 'copy';
+}
+
+// drop handler - not working
+fileDrop.addEventListener('dragenter', handleDragover);
+fileDrop.addEventListener('dragover', handleDragover);
+fileDrop.addEventListener('drop', handleDrop);
 
 fileInput.addEventListener('change', handleFile);
