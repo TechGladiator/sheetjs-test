@@ -1,13 +1,12 @@
-#drop{
+#file-drop{
 	border:2px dashed #bbb;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
 	padding:25px;
 	text-align:center;
-	font:20pt bold,"Vollkorn";color:#bbb
+	font:20pt bold;
+	color:#bbb
 }
-#b64data{
-	width:100%;
-}
+
 a { text-decoration: none }
